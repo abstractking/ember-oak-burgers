@@ -1,0 +1,11 @@
+{
+  "name": "airsol-app",
+  "version": "1.0.0",
+  "description": "AirSol application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "license": "MIT"
+}
