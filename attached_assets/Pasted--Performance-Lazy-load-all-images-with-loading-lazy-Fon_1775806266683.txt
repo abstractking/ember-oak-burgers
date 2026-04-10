@@ -1,0 +1,90 @@
+### Performance
+- Lazy load all images with `loading="lazy"`
+- Font display: `font-display: swap` in all `@font-face` or Google Fonts URLs
+- Use `will-change: transform` only on actively animating elements, remove after animation completes
+
+### Accessibility
+- All interactive elements have visible focus states (`outline: 2px solid [accent-color]`)
+- Images have meaningful `alt` text
+- Form inputs have associated `<label>` elements
+- Navbar has `role="navigation"` and `aria-label`
+- Mobile hamburger button has `aria-expanded` and `aria-label`
+
+### Scroll Animations (Both Projects)
+- Use Framer Motion `whileInView` with `viewport={{ once: true, margin: "-80px" }}`
+- Never replay on scroll-up — `once: true` on all entrance animations
+- Default entrance: `y: 30 → 0, opacity: 0 → 1`
+- A&M Studios duration: `0.7s–0.9s` (slower, dreamier)
+- Ember & Oak duration: `0.2s–0.3s` (faster, snappier)
+
+### Mobile Breakpoints
+```
+480px  — small phones
+768px  — tablet / hamburger menu trigger
+968px  — mid-size layout adjustments
+1200px — max content width clamp
+```
+
+### Smooth Scroll
+- `html { scroll-behavior: smooth; }`
+- Navbar links use `href="#section-id"` anchors
+
+---
+
+## FOLDER STRUCTURE (BOTH PROJECTS)
+
+```
+src/
+├── components/
+│   ├── Navbar/
+│   │   ├── Navbar.tsx
+│   │   └── Navbar.module.css
+│   ├── Hero/
+│   ├── Services/  (or Menu/ for Ember & Oak)
+│   ├── About/
+│   ├── Gallery/   (or Visual/)
+│   ├── Testimonials/
+│   ├── CTA/
+│   ├── Contact/
+│   └── Footer/
+├── styles/
+│   └── globals.css     ← CSS custom properties (design tokens)
+├── App.tsx
+└── main.tsx
+```
+
+Each component folder contains exactly:
+- `ComponentName.tsx`
+- `ComponentName.module.css`
+
+No exceptions. Keep it clean.
+
+---
+
+## DO NOT
+
+- Do not use Tailwind CSS
+- Do not use styled-components or emotion
+- Do not use inline `style={{}}` objects except for dynamic animation values
+- Do not add new sections not listed above
+- Do not change color tokens
+- Do not change font choices
+- Do not add placeholder lorem ipsum text — use the copy already defined
+- Do not use `setTimeout` for animations — use Framer Motion only
+- Do not add third-party component libraries (no ShadCN, no Radix, no MUI)
+
+---
+
+## DEFINITION OF DONE
+
+A section is complete when:
+
+- [ ] All Framer Motion entrance animations fire on scroll-enter (`once: true`)
+- [ ] All hover states work on desktop
+- [ ] Mobile layout is correct at 375px, 480px, and 768px
+- [ ] Hamburger menu opens and closes correctly
+- [ ] No layout overflow on any screen size
+- [ ] Font loads correctly from Google Fonts
+- [ ] Form inputs have visible focus states
+- [ ] All buttons have hover AND active states
+- [ ] No console errors or TypeScript type errors

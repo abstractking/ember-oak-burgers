@@ -1,0 +1,91 @@
+.gallery {
+  background: var(--white);
+  padding: 6rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 1;
+  color: var(--black);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.outlined {
+  -webkit-text-stroke: 2px var(--orange);
+  color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.cell {
+  position: relative;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.cell1 {
+  grid-column: span 2;
+  aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 768px) {
+  .cell1 {
+    grid-row: span 2;
+    grid-column: span 1;
+    aspect-ratio: auto;
+  }
+}
+
+.cell2, .cell3, .cell4, .cell5 {
+  aspect-ratio: 4 / 3;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.imageWrapper:hover .img {
+  transform: scale(1.06);
+}
+
+.label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  z-index: 2;
+}

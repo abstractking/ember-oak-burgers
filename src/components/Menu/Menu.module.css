@@ -1,0 +1,96 @@
+.menu {
+  background: var(--white);
+  padding: 6rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.9;
+  color: var(--black);
+  margin-bottom: 4rem;
+}
+
+.heading span {
+  color: var(--red);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 3px solid var(--black);
+  background: var(--black);
+  gap: 3px; /* Creates shared border effect */
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--white);
+  padding: 2.5rem;
+  transition: all 0.12s linear;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.itemName {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+.price {
+  font-family: 'Courier Prime', monospace;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: color 0.12s linear;
+}
+
+.card:hover .price {
+  color: var(--yellow);
+}
+
+.desc {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.tag {
+  align-self: flex-start;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--black);
+  text-transform: uppercase;
+  transition: border-color 0.12s linear;
+}
+
+.card:hover .tag {
+  border-color: var(--orange);
+}

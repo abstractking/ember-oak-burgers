@@ -1,0 +1,115 @@
+ EMBER & OAK BURGERS (Client Portfolio Site)
+
+### Design Tokens (DO NOT CHANGE)
+```css
+--black:  #0D0D0D;
+--white:  #FAFAFA;
+--red:    #E8200A;
+--orange: #FF7B00;
+--yellow: #FFE500;
+--char:   #1A1A1A;
+--smoke:  #2E2E2E;
+```
+
+### Fonts
+- **Bebas Neue** — primary display headings
+- **Anton** — buttons, stamps, secondary headers
+- **Courier Prime** (400, 700) — body text, menu codes, labels
+- **Space Grotesk** (400, 500, 700, 900) — nav links, author names, utility text
+
+### Genre
+Brutalist Whimsy (70%) + Maximalist Pop (30%). Standard intensity.
+Flat fills only. No gradients. Binary hover states (invert on hover). Fast, snappy animations.
+
+---
+
+### SECTION-BY-SECTION FINISHING TASKS
+
+#### NAVBAR
+- Fixed. Yellow background `#FFE500`, 3px black bottom border
+- Logo: `EMBER & OAK` in Bebas Neue, `&` in red
+- Nav links: invert on hover (`background: black, color: yellow`) — instant transition `0.1s`
+- ORDER NOW button: red background, white text → black bg + red text on hover, `scale(1.04)` snap
+- Mobile (< 768px): hamburger icon replaces nav links
+  - Menu slides down from navbar (not full-screen) — black bg, yellow text, stacked links
+  - Each link is full-width, has 2px yellow bottom border
+  - **Framer Motion:** `y: -20 → 0`, `opacity: 0 → 1`, stagger `0.06s`
+
+#### HERO
+- Left panel: Framer Motion stagger on load
+  - Eyebrow → H1 line 1 → H1 line 2 → H1 line 3 → subtext → CTA button → stamp
+  - Each element: `x: -30 → 0, opacity: 0 → 1`, delay increments `0.1s`
+  - Duration: `0.25s` per element (fast, brutalist — no drift)
+- Right panel: texture block with ASCII art burger
+  - On load: `opacity: 0 → 1`, `scale: 1.04 → 1`, duration `0.4s`
+- Diagonal hero divider: yellow `::after` pseudo-element, `skewX(-4deg)`
+- HERO STAMP: rotated `-2deg`, orange border, Courier Prime micro-text
+- CTA button hover: yellow bg + black text + black border, instant swap
+
+#### RUNNING TICKER
+- Infinite scroll: `translateX(0 → -50%)`, `18s linear infinite`
+- Items: Bebas Neue, yellow text on red background
+- Separator: black diamond `◆` between each item
+- On hover: animation pauses (`animation-play-state: paused`)
+
+#### MENU SECTION (WHAT WE SMASH)
+- Background: white `#FAFAFA`
+- Menu grid: 3px black border wrapping all cards, inner cards share borders
+- Each card on hover: entire card inverts — `background: #0D0D0D, color: #FAFAFA`
+  - Price color flips to yellow
+  - Tag border shifts to orange
+  - Transition: `0.12s` — snap, not drift
+- Section heading: `WHAT WE SMASH.` — Bebas Neue, massive, `<span>` on "SMASH." in red
+- Scroll-enter: `staggerChildren: 0.08s`, `y: 20 → 0, opacity: 0 → 1`
+- `whileInView once: true`
+
+#### ABOUT SECTION
+- Left (red background): stats animate up from `0` to their values when scrolled into view
+  - Use `useMotionValue` + `useTransform` or a counter animation hook
+  - Stat values: 6 (years), 12 (menu items), 0 (frozen patties)
+  - Duration: `1.2s` with `easeOut`
+- Right (dark background): quote block with orange left border
+  - Slide in from right: `x: 40 → 0, opacity: 0 → 1` on scroll-enter
+- Badge: `100% LOCAL. 0% APOLOGIES.` — yellow bg, black text, `rotate(-1deg)`, Anton font
+
+#### GALLERY (THE FOOD. THE PROOF.)
+- Irregular CSS Grid: `grid-template-columns: 2fr 1fr 1fr` on desktop
+  - First cell spans 2 rows
+  - Mobile: collapses to `1fr 1fr` with first cell spanning full width
+- Each cell on hover: `scale(1.06)` on the inner fill div (overflow hidden on parent = zoom crop)
+- Color fills stand in for food photos — use Unsplash images if available:
+  - `https://source.unsplash.com/600x800/?burger` (cell 1, tall)
+  - `https://source.unsplash.com/400x300/?smoked-meat` (cell 2)
+  - `https://source.unsplash.com/400x300/?fire-grill` (cell 3)
+  - `https://source.unsplash.com/400x300/?french-fries` (cell 4)
+  - `https://source.unsplash.com/400x300/?milkshake` (cell 5)
+- Label overlays: black background, white Courier Prime text, bottom-left position
+- Section heading: `THE FOOD.` normal, `THE PROOF.` outlined text (`-webkit-text-stroke: 2px var(--orange), color: transparent`)
+
+#### TESTIMONIALS
+- Yellow background `#FFE500`, black card borders, black card backgrounds
+- Cards on hover: `background: #1A1A1A` (slightly lifted black)
+- Large opening quote mark: Anton font, 64px, red — acts as decorative element
+- Stars: yellow `★★★★★` above quote
+- Author: Space Grotesk, orange, small-caps treatment, separated by top border line
+- Scroll-enter: stagger `0.1s`, `y: 24 → 0, opacity: 0 → 1`
+
+#### CTA SECTION
+- Red background `#E8200A`
+- Ghost text "EAT" behind everything: Bebas Neue, `clamp(160px, 25vw, 280px)`, `opacity: 0.08`, centered, `pointer-events: none`
+- Headline: `ORDER` + line break + `NOW.` — yellow, Bebas Neue
+- Button: yellow bg + black text + 4px black border → black bg + yellow text on hover, `scale(1.04)` snap
+
+#### CONTACT SECTION
+- Dark charcoal background `#1A1A1A`
+- Two-column grid: info left, form right, separated by `rgba(250,250,250,0.15)` border
+- Form inputs: dark transparent background, 2px border → orange border on focus
+- All inputs use `Courier Prime` monospace — fits the brutalist aesthetic
+- Submit button: orange bg → yellow bg on hover, full width, Anton font
+- Info items: each has orange left border, label in muted micro-text above value
+
+#### FOOTER
+- Black background, 3px yellow top border
+- Three items: logo left, copyright center, "Built by A&M Studios" right
+- "Built by A&M Studios" links to the A&M Studios site
+- Mobile: stacks vertically, left-aligned

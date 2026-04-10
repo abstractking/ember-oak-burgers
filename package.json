@@ -1,11 +1,24 @@
 {
-  "name": "airsol-app",
+  "name": "ember-and-oak",
   "version": "1.0.0",
-  "description": "AirSol application",
-  "main": "server.js",
+  "description": "Ember & Oak Burgers — handcrafted smash burger restaurant site",
+  "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.2"
   },
   "license": "MIT"
 }

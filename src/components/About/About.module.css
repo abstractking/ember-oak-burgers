@@ -1,0 +1,95 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 80vh;
+}
+
+@media (min-width: 768px) {
+  .about {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.leftPanel {
+  background: var(--red);
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.statNumber {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem, 10vw, 8rem);
+  color: var(--white);
+  line-height: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.1rem;
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.rightPanel {
+  background: var(--char);
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.quoteBlock {
+  border-left: 4px solid var(--orange);
+  padding-left: 2rem;
+  margin-bottom: 4rem;
+  max-width: 500px;
+}
+
+.quote {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.5rem;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.attribution {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  color: var(--orange);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.badge {
+  font-family: 'Anton', sans-serif;
+  background: var(--yellow);
+  color: var(--black);
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  transform: rotate(-1deg);
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: 6px 6px 0px var(--black);
+}

@@ -1,28 +1,53 @@
-# AirSol
+# Ember & Oak Burgers
 
 ## Project Overview
-Empty GitHub repository imported into Replit. A minimal Node.js HTTP server was created as a starter scaffold.
+Full brutalist restaurant landing page for "Ember & Oak Burgers" — a smash burger restaurant. Built with React + Vite + TypeScript + Framer Motion + CSS Modules.
+
+## Design Tokens
+```css
+--black:  #0D0D0D;
+--white:  #FAFAFA;
+--red:    #E8200A;
+--orange: #FF7B00;
+--yellow: #FFE500;
+--char:   #1A1A1A;
+--smoke:  #2E2E2E;
+```
+
+## Fonts (loaded via Google Fonts in index.html)
+- Bebas Neue — display headings
+- Anton — buttons, stamps
+- Courier Prime — body, menu codes
+- Space Grotesk — nav, authors
 
 ## Architecture
-- **Frontend**: Static HTML served via Node.js built-in `http` module
-- **Server**: `server.js` — serves files from the `public/` directory on port 5000
-- **No external dependencies** — uses only Node.js built-ins
+- **Framework**: React 18 + Vite 5 + TypeScript
+- **Animations**: Framer Motion (scroll-triggered, whileInView once: true)
+- **Styling**: CSS Modules — no Tailwind, no styled-components
+- **Dev server**: port 5000, host 0.0.0.0
 
 ## Project Structure
 ```
-├── server.js          # HTTP server (port 5000, host 0.0.0.0)
-├── package.json       # npm config
-├── public/
-│   └── index.html     # Landing page
-└── LICENSE            # MIT License
+src/
+├── components/
+│   ├── Navbar/       — Fixed yellow navbar, hamburger mobile menu
+│   ├── Hero/         — Two-col hero with staggered load animations
+│   ├── Ticker/       — Infinite scroll red ticker bar
+│   ├── Menu/         — 6-item menu grid with invert-on-hover cards
+│   ├── About/        — Stats count-up + quote block
+│   ├── Gallery/      — Irregular CSS Grid photo gallery
+│   ├── Testimonials/ — Yellow bg testimonial cards
+│   ├── CTA/          — Red CTA with ghost "EAT" text
+│   ├── Contact/      — Two-col contact + form
+│   └── Footer/       — Black footer with yellow top border
+├── styles/
+│   └── globals.css   — CSS design tokens + reset
+├── App.tsx
+└── main.tsx
 ```
 
-## Running the App
+## Running
 ```
-node server.js
+npm run dev     # dev server on :5000
+npm run build   # production build → dist/
 ```
-The app listens on `0.0.0.0:5000`.
-
-## Notes
-- The original GitHub import was an empty repository (only a LICENSE file).
-- This starter scaffold was added to make it runnable in the Replit environment.

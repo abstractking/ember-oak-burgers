@@ -1,0 +1,40 @@
+.tickerContainer {
+  background: var(--red);
+  padding: 1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+  border-bottom: 3px solid var(--black);
+  border-top: 3px solid var(--black);
+}
+
+.tickerTrack {
+  display: inline-block;
+  animation: ticker 18s linear infinite;
+  will-change: transform;
+}
+
+.tickerContainer:hover .tickerTrack {
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.tickerItem {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--yellow);
+  margin-right: 2rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.separator {
+  color: var(--black);
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}
