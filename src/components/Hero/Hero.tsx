@@ -49,19 +49,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
         
-        <motion.div 
-          className={styles.rightPanel}
-          initial={{ opacity: 0, scale: 1.04 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-        >
-          <pre className={styles.ascii}>
-{`  ___
- /     \\
-| 🍔    |
- \\___/`}
-          </pre>
-        </motion.div>
+
       </div>
       <div className={styles.divider}></div>
     </section>

@@ -17,11 +17,6 @@
   width: 100%;
 }
 
-@media (min-width: 968px) {
-  .container {
-    grid-template-columns: 1.2fr 1fr;
-  }
-}
 
 .leftPanel {
   padding: 4rem 2rem;
@@ -99,24 +94,6 @@
   display: inline-block;
 }
 
-.rightPanel {
-  background: var(--smoke);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  position: relative;
-  z-index: 1;
-}
-
-.ascii {
-  font-family: 'Courier Prime', monospace;
-  color: var(--white);
-  font-size: clamp(1rem, 2vw, 2rem);
-  line-height: 1.2;
-  font-weight: 700;
-  white-space: pre;
-}
 
 .divider {
   position: absolute;
