@@ -3,11 +3,11 @@ import styles from './Gallery.module.css';
 
 export default function Gallery() {
   const images = [
-    { id: 1, src: "https://source.unsplash.com/600x800/?burger", label: "THE SMASH" },
-    { id: 2, src: "https://source.unsplash.com/400x300/?smoked-meat", label: "SMOKED" },
-    { id: 3, src: "https://source.unsplash.com/400x300/?fire-grill", label: "FIRE" },
-    { id: 4, src: "https://source.unsplash.com/400x300/?french-fries", label: "FRIES" },
-    { id: 5, src: "https://source.unsplash.com/400x300/?milkshake", label: "SHAKE" }
+    { id: 1, src: "/gallery/smash.png", label: "THE SMASH", alt: "Crispy smash burger with melted cheese and caramelized edges" },
+    { id: 2, src: "/gallery/smoked.png", label: "SMOKED", alt: "Thick slices of smoked brisket with charred bark crust" },
+    { id: 3, src: "/gallery/fire.png", label: "FIRE", alt: "Open flames rising on a hot grill grate" },
+    { id: 4, src: "/gallery/fries.png", label: "FRIES", alt: "Crispy golden hand-cut french fries" },
+    { id: 5, src: "/gallery/shake.png", label: "SHAKE", alt: "Thick hand-spun milkshake overflowing with whipped cream" }
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function Gallery() {
               transition={{ delay: idx * 0.1, duration: 0.3 }}
             >
               <div className={styles.imageWrapper}>
-                <img src={img.src} alt={img.label} loading="lazy" className={styles.img} />
+                <img src={img.src} alt={img.alt} loading="lazy" className={styles.img} />
                 <span className={styles.label}>{img.label}</span>
               </div>
             </motion.div>

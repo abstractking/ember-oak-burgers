@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "ntbaPRPZFs3a0L0X9_0bk"
+uri = "file://public/gallery/smash.png"
+type = "image"
+title = "smash burger"
+
+[[generated]]
+id = "wfoulAoLbygC2F_PNP1YR"
+uri = "file://public/gallery/smoked.png"
+type = "image"
+title = "smoked brisket"
+
+[[generated]]
+id = "arXvwyW5Vz99j14SwBqrg"
+uri = "file://public/gallery/fire.png"
+type = "image"
+title = "fire grill"
+
+[[generated]]
+id = "WkyvmZEVyGtK5hhudRp5x"
+uri = "file://public/gallery/fries.png"
+type = "image"
+title = "crispy fries"
+
+[[generated]]
+id = "6fRSKXl1pTxFEriQiyggw"
+uri = "file://public/gallery/shake.png"
+type = "image"
+title = "thick milkshake"
